@@ -6,7 +6,7 @@ async function run() {
     let filePath = core.getInput('file-path');
     let delimiter = core.getInput('delimiter');
     core.debug(`filePath = '${filePath}'`);
-    core.debug(`delimiter at start = '${delimiter}'`);
+    // core.debug(`delimiter at start = '${delimiter}'`);
     if (filePath) {
       await loader.loadEnvVars(filePath,delimiter);
     }
