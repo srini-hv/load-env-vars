@@ -8,7 +8,9 @@ export async function loadEnvVars(filePath: string,delimiter: string) {
         if(err) throw err;
         const lines = data.toString().replace(/\r\n/g,'\n').split('\n');
         for(let line of lines) {
+            core.debug(`Line = '${line}'`);
             var env = line.split(delimiter);
+            core.debug(`Variable = '${env}'`);
             core.exportVariable(env[0],env[1])
         }
     });
