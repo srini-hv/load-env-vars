@@ -37,7 +37,7 @@ async function loadEnvVars(filePath, delimiter) {
         const lines = data.toString().replace(/\r\n/g, '\n').split('\n');
         for (let line of lines) {
             core.debug(`Line = '${line}'`);
-            var env = line.split(delimiter);
+            var env = line.split("=");
             core.debug(`Variable = '${env}'`);
             core.exportVariable(env[0], env[1]);
         }
