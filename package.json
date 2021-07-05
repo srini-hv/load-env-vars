@@ -1,0 +1,31 @@
+{
+  "name": "load-env-vars",
+  "version": "1.0.0",
+  "private": true,
+  "description": "load env vars from file action",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc && ncc build",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts"
+  },
+  "keywords": [
+    "actions",
+    "env",
+    "setup"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^1.0.0",
+    "@actions/io": "^1.0.0",
+    "@actions/tool-cache": "^1.0.0",
+    "@types/node": "^7.0.5"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "@types/node": "^12.0.4",
+    "@types/semver": "^6.0.0",
+    "prettier": "^1.17.1",
+    "typescript": "^3.5.1"
+  }
+}

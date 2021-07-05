@@ -1,0 +1,11 @@
+name: 'Load environment variables from file'
+description: 'Install a specific version of Tektpn and add it to the PATH'
+inputs:
+  file-path:
+    description: 'Env file path'
+  delimter:
+    description: 'Delimiter in env file'
+    default: '='
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
