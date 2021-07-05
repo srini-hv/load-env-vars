@@ -12,7 +12,9 @@ export async function loadEnvVars(filePath: string,delimiter: string) {
             core.debug(`delimiter = '${delimiter}'`);
             var env = line.split(delimiter);
             core.debug(`Variable = '${env}'`);
-            core.exportVariable(env[0],env[1])
+            if(env.includes(delimiter) && env[0]!='#'){
+                core.exportVariable(env[0].trim(),env[1].trim())
+            }
         }
     });
 }
