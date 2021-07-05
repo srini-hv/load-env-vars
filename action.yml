@@ -1,5 +1,5 @@
 name: 'Load environment variables from file'
-description: 'Install a specific version of Tektpn and add it to the PATH'
+description: 'Load environment variables from file'
 inputs:
   file-path:
     description: 'Env file path'
