@@ -37,7 +37,8 @@ async function loadEnvVars(filePath, delimiter) {
         const lines = data.toString().replace(/\r\n/g, '\n').split('\n');
         for (let line of lines) {
             core.debug(`Line = '${line}'`);
-            var env = line.split("=");
+            core.debug(`delimiter = '${delimiter}'`);
+            var env = line.split(delimiter);
             core.debug(`Variable = '${env}'`);
             core.exportVariable(env[0], env[1]);
         }
@@ -79,6 +80,7 @@ async function run() {
         let filePath = core.getInput('file-path');
         let delimiter = core.getInput('delimiter');
         core.debug(`filePath = '${filePath}'`);
+        core.debug(`delimiter at start = '${delimiter}'`);
         if (filePath) {
             await loader.loadEnvVars(filePath, delimiter);
         }
